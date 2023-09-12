@@ -1,6 +1,6 @@
 import React from 'react'
 import msd from "../images/msd.jpg";
-import { Link } from 'react-router-dom/cjs/react-router-dom.min';
+import { Link } from 'react-router-dom';
 const ContactDetail = (props) => {
   const {name, email}=props.location.state.contact
   return (
