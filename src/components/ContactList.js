@@ -1,8 +1,9 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect } from "react";
 import ContactCard from "./ContactCard";
 import { Link } from "react-router-dom";
 import { useContactsCrud } from "../context/ContactsCrudContext";
 const ContactList = () => {
+  
   const {
     contacts,
     searchTerm,
@@ -10,13 +11,13 @@ const ContactList = () => {
     searchHandler,
     retriveContacts,
   } = useContactsCrud();
+
   const onUserSearch = (e) => {
     searchHandler(e.target.value)
   };
   useEffect(() => {
     retriveContacts();
-
-  }, []);
+  }, [retriveContacts]);
 
   return (
     <div className="main">
